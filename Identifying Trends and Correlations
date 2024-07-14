@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+
+ Plot GDP over the years
+plt.figure(figsize=(10, 5))
+plt.plot(years, gdp, marker='o')
+plt.title('GDP Over the Years')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.grid(True)
+plt.show()
+
+Correlation analysis
+correlation_matrix = np.corrcoef([infrastructure_investment, education_expenditure, health_expenditure, industrial_growth_rate, gdp])
+print("Correlation Matrix:\n", correlation_matrix)
