@@ -1,0 +1,15 @@
+Predict future GDP based on increased infrastructure investment
+
+future_years = np.arange(2021, 2026)
+predicted_infrastructure_investment = infrastructure_investment[-1] * 1.05 ** np.arange(1, 6)
+predicted_gdp = gdp[-1] * 1.05 ** np.arange(1, 6)
+
+plt.figure(figsize=(10, 5))
+plt.plot(years, gdp, marker='o', label='Historical GDP')
+plt.plot(future_years, predicted_gdp, marker='o', linestyle='--', label='Predicted GDP')
+plt.title('GDP Prediction with Increased Infrastructure Investment')
+plt.xlabel('Year')
+plt.ylabel('GDP')
+plt.legend()
+plt.grid(True)
+plt.show()
