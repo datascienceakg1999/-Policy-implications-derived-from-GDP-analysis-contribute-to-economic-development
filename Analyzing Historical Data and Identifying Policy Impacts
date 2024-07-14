@@ -1,0 +1,44 @@
+import numpy as np
+
+ historical data: Rows represent different years, columns represent different economic indicators
+ Columns: [Year, Infrastructure Investment, Education Expenditure, Health Expenditure, Industrial Growth Rate, GDP]
+ Values are in appropriate units/scales
+historical_data = np.array([
+    [2010, 3000, 1000, 800, 6.0, 2.5],  # Year 2010
+    [2011, 3200, 1050, 820, 6.2, 2.8],  # Year 2011
+    [2012, 3400, 1100, 840, 6.4, 3.0],  # Year 2012
+    [2013, 3600, 1150, 860, 6.6, 3.3],  # Year 2013
+    [2014, 3800, 1200, 880, 6.8, 3.5],  # Year 2014
+    [2015, 4000, 1250, 900, 7.0, 3.7],  # Year 2015
+    [2016, 4200, 1300, 920, 7.2, 4.0],  # Year 2016
+    [2017, 4400, 1350, 940, 7.4, 4.2],  # Year 2017
+    [2018, 4600, 1400, 960, 7.6, 4.5],  # Year 2018
+    [2019, 4800, 1450, 980, 7.8, 4.7],  # Year 2019
+    [2020, 5000, 1500, 1000, 8.0, 5.0], # Year 2020
+])
+
+Extract columns for analysis
+years = historical_data[:, 0]
+infrastructure_investment = historical_data[:, 1]
+education_expenditure = historical_data[:, 2]
+health_expenditure = historical_data[:, 3]
+industrial_growth_rate = historical_data[:, 4]
+gdp = historical_data[:, 5]
+
+ Calculate mean values and trends
+mean_infrastructure = np.mean(infrastructure_investment)
+mean_education = np.mean(education_expenditure)
+mean_health = np.mean(health_expenditure)
+mean_industrial_growth = np.mean(industrial_growth_rate)
+mean_gdp = np.mean(gdp)
+
+print("Mean Infrastructure Investment:", mean_infrastructure)
+print("Mean Education Expenditure:", mean_education)
+print("Mean Health Expenditure:", mean_health)
+print("Mean Industrial Growth Rate:", mean_industrial_growth)
+print("Mean GDP:", mean_gdp)
+
+Calculate year-on-year growth rates
+gdp_growth_rates = np.diff(gdp) / gdp[:-1] * 100
+
+print("Year-on-Year GDP Growth Rates:", gdp_growth_rates)
